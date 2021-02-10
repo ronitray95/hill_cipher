@@ -21,9 +21,8 @@ def enterCommand():
         serverSocket.send(str.encode('quit'))
         return
     l = len(cmd)
-    cols = l / \
-        CIPHER_COL_LENGTH if l % CIPHER_COL_LENGTH == 0 else int(
-            l/CIPHER_COL_LENGTH)+1
+    cols = int(
+        l/CIPHER_COL_LENGTH) if l % CIPHER_COL_LENGTH == 0 else int(l/CIPHER_COL_LENGTH)+1
     mat = [None] * cols
     matrix = [copy.deepcopy(mat)]
     for i in range(1, CIPHER_ROW_LENGTH):
