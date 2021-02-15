@@ -50,7 +50,6 @@ def enterCommand():
             newll.append('0' if d[j] == CRC_POLYNOMIAL[j] else '1')
         crc = (''.join(newll))
         inpCRC = crc+inpCRC[POLY_LENGTH:]
-    print('CRC is', inpCRC)
     # inpCRC contains the final CRC value
 
     enc_matrix = [copy.deepcopy(mat)]  # PENGUINS ARE ONE TO ONE
@@ -69,7 +68,16 @@ def enterCommand():
             enc_msg += str(enc_matrix[i][j]) + ' '
     enc_msg = enc_msg.strip()
     serverSocket.send(str.encode(enc_msg+'\n'+inpCRC))
-    # print(enc_msg)
+
+    print('\nCalculated CRC:', inpCRC)
+    print('\nActual matrix')
+    for m in matrix:
+        print(*m, sep=' ', end='')
+        print()
+    print('\nEncrypted matrix')
+    for m in enc_matrix:
+        print(*m, sep=' ', end='')
+        print()
 
 
 def main():

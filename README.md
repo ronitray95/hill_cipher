@@ -14,6 +14,9 @@ The client sends text (only alphabets and spaces) to the server after encryption
 
 - Lowercase alphabets, if present, are converted to uppercase before sending to server.
 - Client quits after sending one message.
-- fs
 - Server is multithreaded.
 - All constants used can be changed in `encrypt.py`.
+
+## Demo
+
+![Client & Server output](output.png)

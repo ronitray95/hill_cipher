@@ -34,8 +34,8 @@ def acceptMessage(conn, addr, text):
         for j in range(cols):
             enc_matrix[i][j] = int(mat_data[x])
             x += 1
-    print('Received CRC:', crc_recv)
-    print('Received encrypted matrix')
+    print('\nReceived CRC:', crc_recv)
+    print('\nReceived encrypted matrix')
     for m in enc_matrix:
         print(*m, sep=' ', end='')
         print()
